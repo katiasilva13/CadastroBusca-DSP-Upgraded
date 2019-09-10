@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,10 +55,10 @@ public class Busca {
         } else {
             return "Não encotrado";
         }
-    
+
     }
 
-    private boolean pesquisaNome(String nome) throws FileNotFoundException, UnsupportedEncodingException, IOException {
+    public boolean pesquisaNome(String nome) throws FileNotFoundException, UnsupportedEncodingException, IOException {
         InputStream is = new FileInputStream("src\\cadastro.txt");
         InputStreamReader isr = new InputStreamReader(is, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
@@ -73,7 +74,23 @@ public class Busca {
         }
         br.close();
         return tem;
-    
+
+    }
+
+    public String listar() throws FileNotFoundException, UnsupportedEncodingException, IOException {
+        InputStream is = new FileInputStream("src\\cadastro.txt");
+        InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+        BufferedReader br = new BufferedReader(isr);
+
+        StringBuffer stringBuffer = new StringBuffer("");
+        String line = null;
+        String displayMessage = "\tRegistro:\n";;
+        while ((line = br.readLine()) != null) {
+            stringBuffer.append(line);
+            displayMessage += line + "\n";
+        }
+        br.close();
+        return displayMessage;
     }
 
 }

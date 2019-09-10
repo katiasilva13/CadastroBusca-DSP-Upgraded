@@ -14,12 +14,12 @@ import java.util.regex.Pattern;
  *
  * @author ktia-
  */
-public class BuscaID {
+public class Busca {
 
     boolean tem = false;
     String registro = null;
 
-    public boolean pesquisa(int id) throws FileNotFoundException, UnsupportedEncodingException, IOException {
+    public boolean pesquisaId(int id) throws FileNotFoundException, UnsupportedEncodingException, IOException {
         InputStream is = new FileInputStream("src\\cadastro.txt");
         InputStreamReader isr = new InputStreamReader(is, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
@@ -37,9 +37,9 @@ public class BuscaID {
         return tem;
     }
 
-    public String buscaResult(String id) throws UnsupportedEncodingException, IOException {
+    public String buscaIdRes(String id) throws UnsupportedEncodingException, IOException {
         int a = Integer.parseInt(id);
-        pesquisa(a);
+        pesquisaId(a);
         if (tem) {
             return "Encontrado\n" + registro;
         } else {

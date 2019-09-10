@@ -12,9 +12,9 @@ public class GeradorId {
     private static int id = 1;
 
     public static int getNextId() throws UnsupportedEncodingException, IOException {
-        BuscaID check = new BuscaID();
+        Busca check = new Busca();
 
-        if (!check.pesquisa(id)) {
+        if (!check.pesquisaId(id)) {
             return id++;
         } else {
             id++;

@@ -79,10 +79,10 @@ public class Pesquisar extends javax.swing.JInternalFrame {
 
     private void jBpesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpesquisarActionPerformed
         // TODO add your handling code here:
-        BuscaID buscar = new BuscaID();
+        Busca buscar = new Busca();
         try {
             String id = jTid.getText();
-            JOptionPane.showMessageDialog(null, buscar.buscaResult(id));
+            JOptionPane.showMessageDialog(null, buscar.buscaIdRes(id));
             //  buscar.buscaResult(id);
         } catch (IOException ex) {
             Logger.getLogger(Pesquisar.class.getName()).log(Level.SEVERE, null, ex);

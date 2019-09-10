@@ -47,4 +47,33 @@ public class Busca {
         }
     }
 
+    public String buscaNomeRes(String nome) throws UnsupportedEncodingException, IOException {
+        pesquisaNome(nome);
+        if (tem) {
+            return "Encontrado\n" + registro;
+        } else {
+            return "Não encotrado";
+        }
+    
+    }
+
+    private boolean pesquisaNome(String nome) throws FileNotFoundException, UnsupportedEncodingException, IOException {
+        InputStream is = new FileInputStream("src\\cadastro.txt");
+        InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+        BufferedReader br = new BufferedReader(isr);
+
+        StringBuffer stringBuffer = new StringBuffer("");
+        String line = null;
+
+        while ((tem == false) && (line = br.readLine()) != null) {
+            stringBuffer.append(line);
+            Matcher m = Pattern.compile("Nome: " + nome).matcher(line);
+            tem = m.find();
+            registro = line;
+        }
+        br.close();
+        return tem;
+    
+    }
+
 }

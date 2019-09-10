@@ -33,8 +33,11 @@ public class Pesquisar extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jBpesquisar = new javax.swing.JButton();
-        jTid = new javax.swing.JTextField();
+        jTid1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTid2 = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -49,29 +52,52 @@ public class Pesquisar extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Digite o ID:");
 
+        jLabel3.setText("ou");
+
+        jLabel4.setText("Digite o Nome:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTid, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(160, 160, 160)
                 .addComponent(jBpesquisar)
-                .addGap(37, 37, 37))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(32, 32, 32)
+                                .addComponent(jTid1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTid2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
+                        .addGap(79, 79, 79))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBpesquisar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGap(93, 93, 93)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTid1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTid2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(jBpesquisar)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -81,9 +107,15 @@ public class Pesquisar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         Busca buscar = new Busca();
         try {
-            String id = jTid.getText();
-            JOptionPane.showMessageDialog(null, buscar.buscaIdRes(id));
-            //  buscar.buscaResult(id);
+            String id = jTid1.getText();
+            String nome = jTid2.getText();
+
+            if (!nome.equalsIgnoreCase(""))  {
+                JOptionPane.showMessageDialog(null, buscar.buscaNomeRes(nome));
+            } else if (!id.equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(null, buscar.buscaIdRes(id));
+            }
+
         } catch (IOException ex) {
             Logger.getLogger(Pesquisar.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -95,6 +127,9 @@ public class Pesquisar extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBpesquisar;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTid;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField jTid1;
+    private javax.swing.JTextField jTid2;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,6 +12,7 @@ import java.io.OutputStreamWriter;
  */
 public class Cadastro {
 
+    Uf uF;
     private String nome;
     private String dataNasc;
     private String telefone;
@@ -102,15 +103,20 @@ public class Cadastro {
         OutputStreamWriter osw = new OutputStreamWriter(fw);
         GeradorId id = new GeradorId();
         try (BufferedWriter bw = new BufferedWriter(osw)) {
-            bw.write("ID: " + id.getNextId() + ", ");
-            bw.write("Nome: " + this.nome + ", ");
-            bw.write("Data de Nascimento: " + this.dataNasc + ", ");
-            bw.write("Telefone: " + this.telefone + ", ");
-            bw.write("Cep: " + this.cep + ", ");
-            bw.write("Endereço: " + this.endereco + ", ");
-            bw.write("Nº: " + this.numCasa + ", ");
-            bw.write("Cidade: " + this.cidade + ", ");
-            bw.write("UF: " + this.uf + "; \n");
+            bw.write(":" + id.getNextId() + ",");
+            bw.write("  " + this.nome + ",");
+            bw.write("" + this.dataNasc + ",");
+            bw.write("" + this.telefone + ",");
+            bw.write("" + this.cep + ",");
+            bw.write("" + this.endereco + ",");
+            bw.write("" + this.numCasa + ",");
+            bw.write("" + this.cidade + ",");
+            try {
+                bw.write("" + this.uF.valueOf(uf.toUpperCase()) + ";\n");
+            } catch (Exception e) {
+                bw.write("" + this.uf.replace(uf, "") + ";\n");
+            }
+
             bw.flush();
             bw.close();
             fw.close();

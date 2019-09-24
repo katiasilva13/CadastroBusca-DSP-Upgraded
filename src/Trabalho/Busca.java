@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class Busca {
 
     boolean tem = false;
-    String registro = null;
+    String registro = "";
 
     public boolean pesquisaId(int id) throws FileNotFoundException, UnsupportedEncodingException, IOException {
         InputStream is = new FileInputStream("src\\cadastro.txt");
@@ -30,7 +30,7 @@ public class Busca {
 
         while ((tem == false) && (line = br.readLine()) != null) {
             stringBuffer.append(line);
-            Matcher m = Pattern.compile("ID: " + id + ",").matcher(line);
+            Matcher m = Pattern.compile(":" + id + ",").matcher(line);
             tem = m.find();
             registro = line;
         }
@@ -66,31 +66,20 @@ public class Busca {
         StringBuffer stringBuffer = new StringBuffer("");
         String line = null;
 
-        while ((tem == false) && (line = br.readLine()) != null) {
-            stringBuffer.append(line);
-            Matcher m = Pattern.compile("Nome: " + nome).matcher(line);
-            tem = m.find();
-            registro = line;
-        }
-        br.close();
-        return tem;
-
-    }
-
-    public String listar() throws FileNotFoundException, UnsupportedEncodingException, IOException {
-        InputStream is = new FileInputStream("src\\cadastro.txt");
-        InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-        BufferedReader br = new BufferedReader(isr);
-
-        StringBuffer stringBuffer = new StringBuffer("");
-        String line = null;
-        String displayMessage = "\tRegistro:\n";;
         while ((line = br.readLine()) != null) {
             stringBuffer.append(line);
-            displayMessage += line + "\n";
+            Matcher m = Pattern.compile("  " + nome).matcher(line);
+            tem = m.find();
+            if (tem) {
+                registro += line + "\n";
+            }
         }
         br.close();
-        return displayMessage;
+        if (!registro.equalsIgnoreCase("")) {
+            return tem = true;
+        }
+        return tem;
+
     }
 
 }

@@ -1,4 +1,11 @@
-﻿ID: 1, Nome: Eriks Henrique , Data de Nascimento: 05/02/1997, Telefone:(44)98852-5955, Cep: 87120-000, Endereço: Rua Projetada A, Nº: 372, Cidade: Floresta, UF: PR; 
-ID: 2, Nome: Dilma Roussef, Data de Nascimento: 24/05/2019, Telefone:(44)98852-5955, Cep: 87120-000, Endereço: São Paulo, Nº: 450, Cidade: Maringá, UF: PR; 
-ID: 3, Nome: Marina Silva, Data de Nascimento: 13/11/1998, Telefone:(44)90000-0000, Cep: 87000-000, Endereço: Rua 31, Nº: 404, Cidade: Maringá, UF: PR; 
-ID: 4, Nome: Aparato Futurista, Data de Nascimento: 08/03/2019, Telefone: (44)00000-0000   , Cep: 89000-000, Endereço: Av. Mauá, Nº: 2854, Cidade: Maringá, UF: PR; 
+:1,  Daniela Viviane Estevão Silva,11/12/1997,(44)99821-4476,87030-450,Rua Limoeiro,171,Maringa,PR;
+:2,  Katia Marina,13/11/1998,(44)99821-5378,87030-455,rua america,277,Floresta,PR;
+:3,  Aparato Futurista 01,    /  /    ,(  )     -       ,      -   ,Av. Maua,1214,Maringá,PR;
+:4,  Aparato Futurista 02,   /  /    ,(  )     -       ,     -   ,,,Maringá,PR;
+:5,  Aparato Futurista 03,   /  /    ,(  )     -       ,     -   ,,,,PR;
+:6,  Aparato Futurista 04,   /  /    ,(  )     -       ,     -   ,,,Loanda,PR;
+:7,  Aparato Futurista 06,   /  /    ,(  )     -       ,     -   ,,,Londrina,PR;
+:8,  Aparato Futurista eu perdi as contas,  /  /    ,(  )     -       ,     -   ,,,,;
+:12,  Kátia Marina Silva,13/11/1998,(  )     -       ,     -   ,,,Maringá,PR;
+:13,  Daniela Renata Alves,  /  /    ,(  )     -       ,     -   ,,,Loanda,PR;
+:9,  Eriks Henrique dos Santos,05/02/1997,(44)98852-5955   ,87120-000,Rua Expedicionário José Rizik,372,Floresta,PR;

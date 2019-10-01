@@ -6,10 +6,6 @@
 :6,  Aparato Futurista 04,   /  /    ,(  )     -       ,     -   ,,,Loanda,PR;
 :7,  Aparato Futurista 06,   /  /    ,(  )     -       ,     -   ,,,Londrina,PR;
 :8,  Aparato Futurista eu perdi as contas,  /  /    ,(  )     -       ,     -   ,,,,;
-:9,  Teste 123456,  /  /    ,(  )     -       ,     -   ,,,,RJ;
-:10,  Teste 2,  /  /    ,(  )     -       ,     -   ,,,,GO;
-:11,  Teste 4,  /  /    ,(  )     -       ,     -   ,,,,;
 :12,  Kátia Marina Silva,13/11/1998,(  )     -       ,     -   ,,,Maringá,PR;
 :13,  Daniela Renata Alves,  /  /    ,(  )     -       ,     -   ,,,Loanda,PR;
-:14,  Paulo Silva,01/01/2001,(  )     -       ,     -   ,,,Curitiba,PR;
-:15,  Mariana Cabral,  /  /    ,(  )     -       ,     -   ,,,Americana,SP;
+:9,  Eriks Henrique dos Santos,05/02/1997,(44)98852-5955   ,87120-000,Rua Expedicionário José Rizik,372,Floresta,PR;
